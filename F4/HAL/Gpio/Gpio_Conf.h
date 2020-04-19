@@ -142,7 +142,7 @@ typedef struct GpioDescription_s
  * \retval 							Status of the operation
  */
 GpioStatus_t GpioInit(GpioDescription_t *pGpioDescription, GpioPinNames_t GpioPin, GpioPinModes_t GpioMode,
-					  GpioPinConfigs_t GpioConfig, GpioPinPulls_t GpioPull, GPIO_PinState State);
+					  GpioPinConfigs_t GpioConfig, GpioPinPulls_t GpioPull, uint32_t State);
 
 /*!
  * \brief Toggle GPIO pin
