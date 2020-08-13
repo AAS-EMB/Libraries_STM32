@@ -23,7 +23,7 @@
 /*!
  * Getting the table value of the checksum
  */
-#define CRC32_NEXT(CRC, c) 					(CRC32_Table[(((uint8_t)(CRC)) ^ (c))&0xFF] ^ ((CRC) >> 8))
+#define CRC32_NEXT(CRC, c) 					(CRC32_Table[(CRC ^ c) & 0xFF] ^ (CRC >> 8))
 
 /*!
  * Flash timeout
@@ -162,7 +162,7 @@ FlashStatus_t FlashWriteStructe(uint32_t Address, FlashMapData_t *pStruct);
  * \param[IN] Size  		Data size
  * \retval           		The value of the checksum
  */
-uint32_t ComputeChecksum(uint32_t Crc, void* pData, uint32_t Size);
+uint32_t ComputeChecksum(uint32_t Crc, const void *pData, uint32_t Size);
 
 /*!
  * \brief Check integrities structe with use checksum

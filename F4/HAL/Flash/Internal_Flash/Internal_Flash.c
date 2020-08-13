@@ -301,15 +301,13 @@ FlashStatus_t FlashWriteStructe(uint32_t Address, FlashMapData_t *pStruct)
  * \param[IN] Size  		Data size
  * \retval           		The value of the checksum
  */
-uint32_t ComputeChecksum(uint32_t Crc, void* pData, uint32_t Size)
+uint32_t ComputeChecksum(uint32_t Crc, const void *pData, uint32_t Size)
 {
-	while (Size > 0)
+	while (Size--)
 	{
-		Crc = CRC32_NEXT(Crc, *(uint8_t*)pData);
-		pData = (uint8_t*)pData + 1;
-		Size--;
+		Crc = CRC32_NEXT(Crc, *(uint8_t*)pData++);
 	}
-
+	
 	return Crc;
 }
 
