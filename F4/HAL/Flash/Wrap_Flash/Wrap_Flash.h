@@ -50,6 +50,27 @@ typedef struct FlashStorage_s
 
 }FlashStorage_t;
 
+/*!
+ * @brief Function that performs the initialization of the storage
+ *
+ * @return FlashStorageErr_t - status operation
+ */
+FlashStorageErr_t FlashStorageInit(void);
+
+/*!
+ * @brief Function that writes the structure of the global store into memory
+ *
+ * @return FlashStorageErr_t - status operation
+ */
+FlashStorageErr_t GlobalStorageWrite(void);
+
+/*!
+ * @brief Reading the global storage
+ *
+ * @return Pointer to the FlashMapData_t
+ */
+FlashMapData_t* GlobalStorageRead(void);
+
 #ifdef __cplusplus
 }
 #endif

@@ -92,12 +92,10 @@ static void CopyToExtStrgBuffer(const FlashMapData_t *pStorage)
  */
 static uint8_t UseDefaultGlobalStorage(void)
 {
-	uint32_t crc = CRC_INI_VAL;
-
 	// IMPLEMENTATION
 	// Filling in the default structure with your own configs
 
-	GlobalStorage.Checksum = ComputeChecksum(crc, (void*) StorageDescr.pGlobalStorage, FLASH_STRUCT_USER_SIZE - 4);
+	GlobalStorage.Checksum = ComputeChecksum(CRC_INI_VAL, (void*) StorageDescr.pGlobalStorage, FLASH_STRUCT_USER_SIZE - 4);
 
 	return true;
 }
