@@ -364,7 +364,7 @@ void AT45DB_FlashWriteBuffer(uint8_t* pData, uint16_t Offset, uint16_t Size);
 /*!
  * @brief Function that writes the contents of the internal flash memory chip buffer to a Flash memory page
  *
- * @param Page
+ * @param Page				Number page
  */
 void AT45DB_WriteBufferToPage(uint16_t Page);
 
