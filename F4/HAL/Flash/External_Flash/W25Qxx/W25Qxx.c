@@ -9,14 +9,14 @@
 #include "W25Qxx.h"
 #include "DebugPrint.h"
 
-#define MAX_DELAY_TIME		100
+#define MAX_DELAY_TIME			100
 
 /*!
  * @brief SPI transfer
  *
- * @param Data					Send byte
+ * @param Data				Send byte
  *
- * @return						Receive byte
+ * @return				Receive byte
  */
 static uint8_t W25Qxx_TransmitReceive(uint8_t Data)
 {
@@ -148,7 +148,7 @@ void W25Qxx_WriteStatusReg(W25Qxx_StatusReg_t W25Qxx_StatusReg, uint8_t W25Qxx_S
  * @brief The Read Data instruction allows one or more data bytes to be sequentially read from the memory
  *
  * @param W25Qxx_PageNumber		Page number
- * @param W25Qxx_OffsetInByte	Offset
+ * @param W25Qxx_OffsetInByte		Offset
  * @param W25Qxx_Data			Pointer to the read data
  * @param W25Qxx_Size			Data read size
  */
@@ -186,7 +186,7 @@ void W25Qxx_ReadData(uint32_t W25Qxx_PageNumber, uint32_t W25Qxx_OffsetInByte, v
  *        possible frequency of FR (see AC Electrical Characteristics)
  *
  * @param W25Qxx_PageNumber		Page number
- * @param W25Qxx_OffsetInByte	Offset
+ * @param W25Qxx_OffsetInByte		Offset
  * @param W25Qxx_Data			Pointer to the read data
  * @param W25Qxx_Size			Data read size
  */
@@ -224,7 +224,7 @@ void W25Qxx_FastReadData(uint32_t W25Qxx_PageNumber, uint32_t W25Qxx_OffsetInByt
  * @brief The Page Program instruction allows from one byte to 256 bytes (a page) of data to be programmed at previously erased (FFh) memory locations
  *
  * @param W25Qxx_PageNumber		Number page
- * @param W25Qxx_OffsetInByte	Offset
+ * @param W25Qxx_OffsetInByte		Offset
  * @param W25Qxx_pData			Pointer to the write data
  * @param W25Qxx_Size			Size data write
  */
@@ -268,7 +268,7 @@ void W25Qxx_PageProgram(uint32_t W25Qxx_PageNumber, uint32_t W25Qxx_OffsetInByte
 /*!
  * @brief The Sector Erase instruction sets all memory within a specified sector (4K-bytes) to the erased state of all 1s (FFh)
  *
- * @param W25Qxx_SectorNumber	Sector number
+ * @param W25Qxx_SectorNumber		Sector number
  */
 void W25Qxx_SectorErase(uint16_t W25Qxx_SectorNumber)
 {
@@ -306,7 +306,7 @@ void W25Qxx_SectorErase(uint16_t W25Qxx_SectorNumber)
 /*!
  * @brief The Block Erase instruction sets all memory within a specified block to the erased state of all 1s (FFh)
  *
- * @param W25Qxx_BlockNumber	Block number
+ * @param W25Qxx_BlockNumber		Block number
  */
 void W25Qxx_BlockErase(uint16_t W25Qxx_BlockNumber)
 {
@@ -496,7 +496,7 @@ void W25Qxx_ReadUniqueId(uint8_t *W25Qxx_pUiniqueID)
  *
  * @param W25Qxx_pManID			Pointer to the Manufacture ID
  * @param W25Qxx_pMemTypeID		Pointer to the Memory type ID
- * @param W25Qxx_pCapacityID	Pointer to the Capacity ID
+ * @param W25Qxx_pCapacityID		Pointer to the Capacity ID
  */
 void W25Qxx_ReadJedecId(uint8_t *W25Qxx_pManID, uint8_t *W25Qxx_pMemTypeID, uint8_t *W25Qxx_pCapacityID)
 {
