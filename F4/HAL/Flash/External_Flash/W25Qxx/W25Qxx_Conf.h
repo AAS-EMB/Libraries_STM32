@@ -19,15 +19,15 @@
 
 extern SPI_HandleTypeDef hspi1;
 
-#define W25Qxx_BEGIN_CRITICAL_SECTION()		__disable_irq()
-#define W25Qxx_END_CRITICAL_SECTION()		__enable_irq()
+#define W25Qxx_BEGIN_CRITICAL_SECTION()				__disable_irq()
+#define W25Qxx_END_CRITICAL_SECTION()				__enable_irq()
 
 /* Configuration */
-#define W25Qxx_SPI							hspi1
+#define W25Qxx_SPI						hspi1
 #define W25Qxx_CS_PORT						GPIOB
 #define W25Qxx_CS_PIN						GPIO_PIN_0
-#define W25Qxx_CHIP_ENABLE()				HAL_GPIO_WritePin(W25Qxx_CS_PORT, W25Qxx_CS_PIN, GPIO_PIN_RESET)
-#define W25Qxx_CHIP_DISABLE()				HAL_GPIO_WritePin(W25Qxx_CS_PORT, W25Qxx_CS_PIN, GPIO_PIN_SET)
+#define W25Qxx_CHIP_ENABLE()					HAL_GPIO_WritePin(W25Qxx_CS_PORT, W25Qxx_CS_PIN, GPIO_PIN_RESET)
+#define W25Qxx_CHIP_DISABLE()					HAL_GPIO_WritePin(W25Qxx_CS_PORT, W25Qxx_CS_PIN, GPIO_PIN_SET)
 
 #if defined(USE_FREERTOS)
 	#include "cmsis_os.h"
